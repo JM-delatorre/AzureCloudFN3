@@ -40,7 +40,8 @@ jobs:
       shell: bash
       run: |
         ls -ltr ./
-        echo ''
+        sudo apt install zip -Y
+        zip -r app.zip . --exclude @.funcignore --exclude .funcignore
         
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
